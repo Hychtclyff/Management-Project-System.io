@@ -1,0 +1,47 @@
+@import "charts.css/dist/charts.min.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    /* overflow: hidden; */
+}
+
+@layer utilities {
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    .scrollbar-modify::-webkit-scrollbar {
+        width: 5px;
+        height: 10px;
+    }
+
+    .scrollbar-modify::-webkit-scrollbar-thumb {
+        background-color: rgba(128, 128, 128, 0.541);
+        border-radius: 20px;
+    }
+}
+
+/* .circle-background {
+    fill: none;
+    stroke: #e6e6e6;
+    stroke-width: 15;
+}
+
+.circle-progress {
+    fill: none;
+    stroke: #4caf50;
+    stroke-width: 15;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.5s ease;
+}
+
+.percentage-text {
+    font-size: 2em;
+    text-anchor: middle;
+    fill: #333;
+} */
