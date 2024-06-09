@@ -13,8 +13,9 @@ class DashboardController extends Controller
 {
     public function index(Project $project, User $user)
     {
-        $title = 'dashboard';
+        $title = 'Dashboard';
         $userId = Auth::user()->id;
+        $userRole = Auth::user()->role;
         $user = $user->find($userId);
         $now = Carbon::now();
         $dueSoon = $now->addDays(7);
@@ -32,12 +33,15 @@ class DashboardController extends Controller
         $projectsOnProgressCount = Project::whereHas('users', function ($query) use ($userId) {
             $query->where('user_id', $userId);
         })->where('status', 'On progress')->count();
+        $projectsOnGoing = Project::whereHas('users', function ($query) use ($userId) {
+            $query->where('user_id', $userId);
+        })->where('status', 'On Going')->count();
 
         // Menghitung jumlah project dengan status 'Complete'
         $projectCompleteCount = Project::whereHas('users', function ($query) use ($userId) {
             $query->where('user_id', $userId);
         })->where('status', 'Complete')->count();
 
-        return view('dashboard', compact('title', 'user', 'projectsOnProgressCount', 'projectCompleteCount', 'totalProjectsCount', 'projectsDueSoon'));
+        return view('dashboard', compact('title', 'user', 'userRole', 'projectsOnProgressCount', 'projectCompleteCount', 'totalProjectsCount', 'projectsDueSoon', 'projectsOnGoing'));
     }
 }

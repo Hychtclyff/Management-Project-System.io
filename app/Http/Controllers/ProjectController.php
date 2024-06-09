@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 
 class ProjectController extends Controller
 {
-    
+
 
 
     function addProject(Project $project)
@@ -50,7 +50,7 @@ class ProjectController extends Controller
         $project->update($validatedData);
 
 
-        $request->session()->flash('create_success', 'Success update the project');
+        $request->session()->flash('success', 'Success submission the project');
         return redirect('/myprojects');
     }
 

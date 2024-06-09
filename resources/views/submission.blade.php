@@ -3,7 +3,7 @@
     <div
         class="flex justify-center  absolute top-0 left-1/2 -translate-x-1/2  w-screen h-screen  overflow-hidden bg-gray-600/5 backdrop-blur-sm">
         <div
-            class="isolate relative bg-white px-6 py-20 sm:py-16 lg:px-8 w-1/2  rounded-xl my-10 overflow-auto scrollbar-modify">
+            class="isolate relative bg-white px-6 py-20 sm:py-16 lg:px-8 md:w-1/2 mx-5 md:mx-0  rounded-xl my-10 overflow-auto scrollbar-modify">
             <a href="{{ url()->previous() }}"
                 class="absolute text-xl shadow-lg top-10 right-10 bg-gray-800 rounded-full "><svg
                     xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffff">

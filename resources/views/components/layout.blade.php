@@ -20,8 +20,11 @@
 
         <main>
             @if (session('success'))
-                <div class="alert bg-blue-500 w-full alert-success alert-dismissible fade show" role="alert">
-                    {{ session('success') }}
+                <div x-data="{ isOpen: true }">
+                    <div x-show="isOpen">
+
+                        <x-dialog>{{ session('success') }}</x-dialog>
+                    </div>
                 </div>
             @endif
             <div class="mx-auto max-w-7xl border-2  py-6 desktop:px-8 mobile:px-3">

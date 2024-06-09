@@ -12,19 +12,19 @@
                 </div>
             </div>
         </td>
-        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm hidden md:table-cell">
             <p class="text-gray-900 whitespace-no-wrap">{{ $project['role'] }}</p>
         </td>
-        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm hidden md:table-cell ">
             <p class="text-gray-900 whitespace-no-wrap">{{ $project['created_at']->format('l, d F Y') }}
             </p>
         </td>
-        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm hidden md:table-cell ">
             <p class="text-gray-900 whitespace-no-wrap"> {{ $project['due_date'] }}
 
             </p>
         </td>
-        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm  hidden md:table-cell ">
             <span class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
                 <x-status color="bg-red-200">
                     <span class="relative">
@@ -32,16 +32,14 @@
 
 
                     </span>
-                    {{-- 
-                    Progres :bg-yellow-200
-                     on going:bg-blue-200
-                --}}
+
                 </x-status>
             </span>
         </td>
 
 
-        <td class="px-5 py-6 border-b border-gray-200 bg-white text-sm text-black flex justify-evenly">
+        <td
+            class="px-5 py-6 border-b border-gray-200 bg-white text-sm text-black flex justify-evenly items-center  flex-col md:flex-row ">
             @if (request()->routeIs('myprojects'))
 
                 @if ($project['status'] !== 'Complete')

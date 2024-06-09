@@ -26,6 +26,11 @@ Route::post('/',  ['title' => 'Login', LoginController::class, 'authenticate']);
 Route::get('/register',  ['title' => 'Login', RegisterController::class, 'index']);
 Route::post('/register',  ['title' => 'Login', RegisterController::class, 'store']);
 
+Route::get('/account',  function () {
+    return view('account', ['title' => 'your account']);
+});
+
+
 
 Route::get('/dashboard', [DashboardController::class, 'index']);
 

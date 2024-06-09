@@ -32,17 +32,18 @@
 
         <x-slot:title>{{ $title }}</x-slot:title>
         <div
-            class="flex justify-center  absolute top-0 left-1/2 -translate-x-1/2  w-screen h-screen  overflow-hidden bg-gray-600/5 backdrop-blur-sm">
-            <div class="project flex relative   mx-16  py-10  px-10 w-full  rounded-xl my-10 ">
+            class="flex justify-center  absolute top-0 left-1/2 -translate-x-1/2  w-screen h-screen  md:overflow-hidden bg-gray-600/5 backdrop-blur-sm">
+            <div
+                class="project flex flex-col md:flex-row relative md:justify-center  items-center my:10 md:mx-16  md:py-10  md:px-10 w-full  rounded-xl my-10 ">
                 <a href="{{ url()->previous() }}"
-                    class="absolute text-xl shadow-lg top-0 right-10 bg-white hover:bg-gray-500  rounded-full "><svg
+                    class="absolute text-xl shadow-lg  right-10 z-10 -top-8 bg-white hover:bg-gray-500  rounded-full "><svg
                         xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
                         fill="#000">
                         <path
                             d="m336-280-56-56 144-144-144-143 56-56 144 144 143-144 56 56-144 143 144 144-56 56-143-144-144 144Z" />
                     </svg>
                 </a>
-                <div class="lazy-project p-5 bg-white rounded-xl overflow-hidden w-1/2 shadow-xl mx-2">
+                <div class="lazy-project p-5 bg-white rounded-xl my-5 md:overflow-hidden md:w-1/2 w-full  shadow-xl md:mx-2">
                     <div class="header flex flex-col justify-center">
                         <span
                             class="border-b-2 border-gray-500 pb-2 mb-5 w-full text-center text-xl z-10 bg-white">{{ $project['name'] }}</span>
@@ -57,12 +58,12 @@
                         <div class="mentor">Maneger: {{ $project['project_manager'] }}</div>
                     </div>
                 </div>
-                <div class="relative project-information my-1   mx-2 w-1/2">
+                <div class="relative project-information md:my-1 my-5  md:mx-2 md:w-1/2 w-full">
                     <div class="team py-5 bg-white rounded-xl w-full shadow-xl flex flex-col px-5 h-1/2 ">
                         <span
                             class="sticky top-0 border-b-2 border-gray-500 pb-2 w-full text-center text-xl z-10 bg-white">Team
                             Project</span>
-                        <ul class=" grid grid-cols-2  mt-3 overflow-y-auto overflow-x-hidden scrollbar-modify">
+                        <ul class="flex flex-col md:grid grid-cols-2  mt-3 overflow-y-auto overflow-x-hidden scrollbar-modify">
                             @foreach ($users as $user)
                                 <li
                                     class=" bg-slate-300 p-3 relative rounded-xl m-2 text-center shadow-lg hover:scale-105 transition-all duration-300 items-center flex -z-1 justify-start group/card">
@@ -85,7 +86,7 @@
                                 class="group-hover:animate-none font-bold text-2xl border-b-2 border-gray-500 pb-2">Status</span>
                             <p class="text-sm ">{{ $project['status'] }}</p>
                             <div
-                                class="bg-blue-500/{{ $progressPercentage }} p-10   m-10 rounded-xl shadow-xl group-hover:animate-bounce">
+                                class="bg-blue-500/{{ $progressPercentage }} p-10   md:m-10 rounded-xl shadow-xl group-hover:animate-bounce">
 
                                 <span class="group-hover:animate-pulse text-3xl "> {{ $progressPercentage }}% </span>
                             </div>
@@ -93,7 +94,7 @@
                         <div
                             class="sponsor bg-white mx-1 rounded-xl h-full  px-5 w-1/2 shadow-xl flex flex-col items-center py-5 ">
                             <span class="border-b-2 border-gray-500 pb-2 w-full text-center">Support by</span>
-                            <ul class=" grid grid-cols-3 gap-1 my-3">
+                            <ul class="flex flex-col md:grid grid-cols-3 gap-1 my-3">
                                 <li
                                     class="bg-orange-500 p-2 rounded-lg shadow-xl col-span-2 text-center hover:scale-105">
                                     Universitas Jambi</li>

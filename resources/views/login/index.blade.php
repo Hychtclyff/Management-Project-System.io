@@ -12,32 +12,12 @@
 </head>
 
 <body class="h-full bg-gray-200">
-    <!--
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
--->
-    <!--
-  This example requires updating your template:
 
-  ```
-  <html class="h-full bg-white">
-  <body class="h-full">
-  ```
--->
-    <section class="h-screen flex justify-center bg-login bg-center bg-cover items-center p-12">
-        <div class="bg-white/10 rounded-2xl text-white backdrop-blur-md shadow-lg w-1/2 p-20 h-5/6 mx-10"></div>
+    <section class="h-screen flex justify-center bg-login bg-center bg-cover items-center md:p-12">
+        <div class="bg-white/10 rounded-2xl text-white backdrop-blur-md shadow-lg md:w-1/2 md:p-20 md:h-5/6 md:mx-10">
+        </div>
         <div
-            class="flex flex-col justify-center bg-white/10 rounded-2xl text-white backdrop-blur-md shadow-lg w-1/4  p-20 h-5/6   ">
+            class="flex flex-col justify-center bg-white/10 rounded-2xl text-white backdrop-blur-md shadow-lg md:w-1/4  p-20 md:h-5/6   ">
 
             @if (session()->has('success'))
                 <div class="alert alert-secondary" role="alert">
@@ -59,7 +39,7 @@
                             <input id="email" name="email" type="email" autocomplete="email" required
                                 class="@error('email')
                                     is-invalid
-                                @enderror block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-black focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                @enderror block w-full text-black pl-5 rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-black focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                         </div>
                         @error('email')
                             <div class="alert alert-danger">{{ $message }}</div>
@@ -70,14 +50,13 @@
                         <div class="flex items-center justify-between">
                             <label for="password" class="block text-sm font-medium leading-6">Password</label>
                             <div class="text-sm">
-                                <a href="#" class="font-semibold text-indigo-600 hover:text-indigo-500">Forgot
-                                    password?</a>
+
                             </div>
                         </div>
                         <div class="mt-2">
                             <input id="password" name="password" type="password" autocomplete="current-password"
                                 value="12345678" required
-                                class="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-black focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                class="text-black pl-5 block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-black focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                         </div>
                     </div>
 
@@ -88,7 +67,7 @@
                         </button>
                     </div>
                 </form>
-                <a href="/register" class=" text-indigo-600 hover:text-indigo-500">Create account</a>
+                <a href="/register" class=" text-white hover:text-indigo-500">Create account</a>
             </div>
         </div>
     </section>
